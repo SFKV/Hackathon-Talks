@@ -1,0 +1,198 @@
+% SPDX-License-Identifier: MIT
+% Copyright (c) 2017-2020 Forschungszentrum Juelich GmbH
+% This code is licensed under MIT license (see the LICENSE file for details)
+%
+\documentclass[
+t, % align text inside frame to t=top, b=bottom, c=center
+10pt, % 8pt, 9pt, 10pt, 11pt, 12pt, 14pt, 17pt, 20pt available as text font
+aspectratio=1610, % select your aspect ratio 4:3=43, 16:9=169, 16:10=1610
+ngerman,
+english,
+%handout,
+]{beamer}
+\usetheme{Juelich}
+
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+
+\newcommand{\templateversion}{18.10}
+\newcommand{\tutorialversion}{18.10}
+
+\title{\LaTeX{} Beamer Template}
+\subtitle{Howto for {\tt beamer}-Slides v\templateversion}
+\author{Template Version \templateversion~~\vrule width0.3pt~~Tutorial Version \tutorialversion}
+\institute[My Institute]{My Institute}
+\date{\today}
+\titlegraphic{\includegraphics[width=\paperwidth]{placeholder}}
+
+\begin{document}
+% only use \maketitle to set your titlepage
+\fzjset{title page=image}
+\maketitle
+
+\fzjset{title page=text}
+\maketitle
+
+\part{Introduction}
+\makepart
+
+\begin{frame}[label=introduction,fragile]
+        \frametitle{{\LaTeX} {\tt .sty} Files -- Version 18.10}
+        \begin{itemize}
+          \item Deprecate enabled compat mode for old FZJ colors.
+          \item Using the old colors requires the switch \verb!\fzjset{compat mode=enabled}!
+          \item Failing to do so, will result in missing colors and a broken build.
+        \end{itemize}
+\end{frame}
+
+
+\begin{frame}[label=introduction]
+        \frametitle{{\LaTeX} {\tt .sty} Files -- Version 18.09}
+        \begin{itemize}
+          \item first version with new corporate design
+          \item tutorial is not complete yet, will be updated periodically
+        \end{itemize}
+\end{frame}
+
+\input{part_installation}
+\input{part_examples}
+\input{part_fzjcolors}
+\input{part_localization}
+\input{part_tweaks}
+\input{part_handouts}
+
+\part{Aspect Ratio}
+\begin{frame}[fragile]
+        \frametitle{Aspect Ratio}
+        The documentclass allows several ratios for the slide. Just change the variable \verb+aspectratio+.
+        \begin{itemize}
+          \item \verb+aspectratio=43+ gives classical 4:3 ratio
+          \item \verb+aspectratio=169+ gives classical 16:9 ratio
+          \item \verb+aspectratio=1610+ gives classical 16:10 ratio
+        \end{itemize}
+\end{frame}
+
+\part{Style}
+\begin{frame}[fragile]
+        \frametitle{Style}
+        The design allows two styles.
+        \begin{block}{Style with Image}
+        \begin{itemize}
+        \item for the title page: \verb+\fzjset{title page=image}+
+        \item for the part page: \verb+\fzjset{section page=image}+
+    \item for the section page: \verb+\fzjset{section page=image}+
+    \end{itemize}
+        \end{block}
+
+        \begin{block}{Style with Text}
+    \begin{itemize}
+        \item for the title page: \verb+\fzjset{title page=text}+
+        \item for the part page: \verb+\fzjset{section page=text}+
+    \item for the section page: \verb+\fzjset{section page=text}+
+    \end{itemize}
+        \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Allcaps or Regular Title Fonts}
+    It is possible to switch the style of the font via the options
+    \begin{itemize}
+      \item \verb+\fzjset{title=allcaps}+ to set the title in allcaps
+      \item \verb+\fzjset{title=regular}+ to set the title regular
+      \item \verb+\fzjset{subtitle=allcaps}+ to set the title in allcaps for short text
+      \item \verb+\fzjset{subtitle=regular}+ to set the title regular and in a smaller font for long text
+      \item \verb+\fzjset{part=allcaps}+ to set the part in allcaps for short text
+      \item \verb+\fzjset{part=regular}+ to set the part regular and in a smaller font for long text
+      \item \verb+\fzjset{frametitle=allcaps}+ to set the frametitle in allcaps for short text
+      \item \verb+\fzjset{frametitle=regular}+ to set the frametitle regular font for long text
+    \end{itemize}
+\end{frame}
+
+
+{\setbeamertemplate{background}{\begin{tikzpicture}[overlay, remember picture]
+  \draw ([yshift=-0.05\paperheight, xshift=0.05\paperheight]current page.north west) |- ([yshift=0.05\paperheight, xshift=-0.05\paperheight]current page.south east) |- cycle;
+\end{tikzpicture}
+}
+\begin{frame}
+    \frametitle{Margins, Sizes}
+    This slide has an outline on the background canvas
+    \begin{itemize}
+      \item One can see the alignments in a normal list
+    \end{itemize}
+    \begin{block}{And also}
+      \begin{itemize}
+        \item for lists
+        \item in a block
+      \end{itemize}
+    \end{block}
+\end{frame}
+}
+
+\fzjset{title=regular}
+\fzjset{title page=text}
+\subtitle{Now in text only mode and regular text}
+\maketitle
+
+\fzjset{title page=image}
+\subtitle{Now back in image mode}
+\maketitle
+
+\part{This is a part page}
+\fzjset{part page=text}
+\makepart
+
+\section{This is a section page}
+\fzjset{section page=text}
+\subtitle{This is a section page}
+\makesection
+
+\fzjset{frametitle=allcaps}
+\begin{frame}
+\frametitle{Title in allcaps}
+\end{frame}
+
+\fzjset{frametitle=regular}
+\begin{frame}
+\frametitle{Title in a regular style}
+\end{frame}
+
+\section{Bugs}
+\begin{frame}[fragile,label=bugs]
+        \frametitle{Fixed Bugs}
+        \begin{block}{Periodically}
+        The \verb+.zip+ archive will be updated periodically for bug fixes. The name and URL of the archive will be the same.
+    \end{block}
+        \begin{block}{More Pitfalls/bugs?}
+                Please report them to {\tt i.kabadshow@fz-juelich.de}
+    \end{block}
+\end{frame}
+
+
+\part{Extensions}
+\makepart
+\begin{frame}[fragile]
+        \frametitle{Poster with \LaTeX -Beamer}
+        To create scientific posters with {\LaTeX} the \verb!beamerposter! extension
+        can be used. Template will be provided soon.
+        \begin{block}{More Information at}
+    \small
+    \url{http://www-i6.informatik.rwth-aachen.de/~dreuw/latexbeamerposter.php}
+    \end{block}
+\end{frame}
+
+\part{Contact Information}
+\begin{frame}[c,label=contact]
+        \frametitle{Contact}
+        \begin{center}
+                \Large \emph{Thank you for using this template!}
+        \end{center}
+        \begin{block}{Enhance Missing Functionality Yourself!}
+                Please send your enhancements along with a short description to {\tt i.kabadshow@fz-juelich.de}
+        \end{block}
+        \begin{block}{Report Problems}
+                Please report problems with the template or uncommon behavior to {\tt i.kabadshow@fz-juelich.de}
+        \end{block}
+\end{frame}
+
+\end{document}

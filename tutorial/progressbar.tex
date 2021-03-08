@@ -1,0 +1,119 @@
+% SPDX-License-Identifier: MIT
+% Copyright (c) 2017-2020 Forschungszentrum Juelich GmbH
+% This code is licensed under MIT license (see the LICENSE file for details)
+%
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Juelich}
+
+\title{Progress Bar Configuration}
+\subtitle{See all the options for Progress Bar}
+\author{Andreas Herten}
+\date{\today}
+\institute{JSC}
+
+\fzjset{title page=text}
+\fzjset{title=allcaps}
+\fzjset{subtitle=allcaps}
+\fzjset{part=allcaps}
+\fzjset{frametitle=regular}
+\fzjset{section page=text}
+
+%% Use FZJ Progress Bar
+\setbeamertemplate{progressbar}[visible]
+%% Adapt height (default: 0.4pt)
+\fzjset{progress bar/height=1ex}
+%% Rather count overlays not frames (default: false)
+\fzjset{progress bar/count overlays=true}
+%% Title page should not have a progress bar (default: false)
+\fzjset{progress bar/count titlepage=false}
+%% Let the progress bar end when the appendix starts (default: false)
+\fzjset{progress bar/count appendix=false}
+%% If we're in the appendix, the progress bar should shrink from right to left (default: false)
+\fzjset{progress bar/invert appendix=true}
+%% Show the progress bar in handout / trans mode (default: false)
+\fzjset{progress bar/show in handout=true}
+\fzjset{progress bar/show in trans=true}
+%% Change color of progress bar, either globally in preamble (i.e. here) or locally for a (set of) slide(s) -- see below (default: fg=fzjblue)
+% \setbeamercolor{progressbar}{fg=fzjgreen}
+
+\newcommand{\printpagesinfo}{%
+	Frame \insertframenumber{} of \inserttotalframenumber{}
+
+	Page \insertpagenumber{} of \insertdocumentendpage{}
+}
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+	\frametitle{First Slide}
+
+	\printpagesinfo
+
+	Orion's sword. Rogue extraordinary claims require extraordinary evidence birth? With pretty stories for which there's little good evidence another world vanquish the impossible. Galaxies intelligent beings venture hearts of the stars realm of the galaxies, rich in mystery, radio telescope, rich in mystery?
+\end{frame}
+
+{\setbeamercolor{progressbar}{fg=fzjgreen}
+\begin{frame}
+	\frametitle{Second Slide}
+	\framesubtitle<1>{First part}
+	\framesubtitle<2>{Second part}
+
+	\printpagesinfo
+
+	Brain is the seed of intelligence! Worldlets inconspicuous motes of rock and gas the carbon in our apple pies Apollonius of Perga hearts of the stars stirred by starlight, emerged into consciousness Jean-Francois Champollion.
+
+	Overlay
+
+	\only<2->{Cosmic fugue network of wormholes shores of the cosmic ocean tingling of the spine, radio telescope extraordinary claims require extraordinary evidence.}
+	% \makeatletter\beamerfzj@pb@counter\makeatother
+\end{frame}
+}
+
+\begin{frame}
+	\frametitle{Third Slide}
+
+	\printpagesinfo
+
+	\begin{itemize}[<+->]
+		\item First bullet
+		\item Second bullet
+		\item Third bullet
+		\item Fourth bullet
+		\item Done
+	\end{itemize}
+\end{frame}
+
+\appendix
+
+\begin{frame}
+	\frametitle{First Appendix Slide}
+
+	\printpagesinfo
+
+	Capt. Malcolm Reynolds: Ah, hell, Shepherd, I ain't looking for help from on high. That's a long wait for a train don't come. Shepherd Book: Why when I talk about belief, why do you always assume I'm talking about God?
+
+	The Operative: [to Mal] You cannot make me angry. Inara Serra: Please, spend an hour with him!
+\end{frame}
+\begin{frame}
+	\frametitle{Second Appendix Slide}
+
+	\printpagesinfo
+
+	\begin{itemize}
+		\item<+-> Carson Beckett M. D.: [a parasite has attached itself to Sheppard's neck, paralyzing him] I'm told you have something of a cling-on.\\
+		Maj. John Sheppard: That's funny.
+		\item<+-> Dr. Rodney McKay: I'm not crazy. I just have another consciousness in my brain. Maj.\\
+		John Sheppard: So he just looks crazy.\\
+		Dr. Rodney McKay: I'm sure I do, but only because Dr. Fumbles McStupid over here was in way over his head!
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\frametitle{Third Appendix Slide}
+
+	\printpagesinfo
+
+	Course if I was one of them – these people that you seem to think are your enemies – what would I do? Well, there’d be no balloon. So I’d draw a map to a real secluded place, like a cave or some underbrush, good place for a trap. An ambush. And when your friends got there, a bunch of my people would be waiting for ‘em. Then they’d use them to trade for me…I guess it’s a good thing I’m not one of them huh? You g1uys got any milk
+\end{frame}
+
+\end{document}

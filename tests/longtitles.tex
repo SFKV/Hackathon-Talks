@@ -1,0 +1,36 @@
+% SPDX-License-Identifier: MIT
+% Copyright (c) 2017-2020 Forschungszentrum Juelich GmbH
+% This code is licensed under MIT license (see the LICENSE file for details)
+%
+\documentclass[t]{beamer}
+\usepackage{trace}
+\usetheme{Juelich}
+\fzjset{
+  title page = text,
+  part page = text,
+  section page = text
+}
+
+\title{This is a very long title that will end up being split into multiple lines, but only the first line is indented}
+\subtitle{The subtitle of this presentation is also quite long, oh my, look what a mess you have made}
+\author{Your Name}
+\institute{Your Institute}
+\date{\today}
+\titlegraphic{
+  \includegraphics[
+    width=\paperwidth]{placeholder}
+}
+
+\begin{document}
+\maketitle
+
+\part{This is quite a long name for a part, are you sure that it really has to be this long}
+\makepart
+
+\section{This is a long section name that will end up being split into multiple lines}
+\makesection
+
+\begin{frame}{This frame has a very long frame title that will end up being split into multiple lines}{My gosh, I do not think I have ever seen a subtitle this long, yet it seems it is still not quite long enough, let us add a few more words}
+  This is the frame content
+\end{frame}
+\end{document}

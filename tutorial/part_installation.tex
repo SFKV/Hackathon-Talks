@@ -1,0 +1,99 @@
+% SPDX-License-Identifier: MIT
+% Copyright (c) 2017-2020 Forschungszentrum Juelich GmbH
+% This code is licensed under MIT license (see the LICENSE file for details)
+%
+\part{Installation}
+\makepart
+
+\section{File Content}
+\begin{frame}[fragile]
+        \frametitle{beamertheme-juelich.zip}
+        The .zip archive consists of 1 directory with 2 subdirectories.
+        \begin{itemize}
+      \item \verb+beamertheme-juelich.zip+
+      \item \verb+beamertheme-juelich/+ \hfill main directory of the .zip file
+      \begin{itemize}
+        \item \verb+/+ \hfill directory containing the .sty files
+        \begin{itemize}
+          \item \verb+beamerthemeJuelich.sty+ \hfill main style file
+          \item \verb+beamercolorthemeJuelich.sty+ \hfill aux. style file
+          \item \verb+beamerfontthemeJuelich.sty+ \hfill aux. style file
+          \item \verb+beamerinnerthemeJuelich.sty+ \hfill aux. style file
+          \item \verb+beamerouterthemeJuelich.sty+ \hfill aux. style file
+          \item \verb+fzj.pdf+ \hfill Juelich logo for pdf\LaTeX
+        \end{itemize}
+        \item[]
+        \item \verb+tutorial/+ \hfill directory containing some minimal examples and the sources of this tutorial
+        \item[]
+        \item \verb+tests/+ \hfill directory containing test infrastructure for the theme
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\section{Installation}
+\subsection{On Linux-based Machines}
+\begin{frame}[fragile]
+        \frametitle{Linux Installation}
+        \framesubtitle{Choose {\tt texmf} Tree}
+        First, choose your favorite install directory.  \newline
+        Then, create a new subdirectory \verb+beamertheme-juelich+
+        \begin{block}{Change to your {\tt texmf} tree and create subdirectory}
+    \begin{itemize}
+      \item \verb+cd $HOME/texmf/tex/latex/+ \hfill \textcolor{fzjblue}{[preferred]} or
+      \item \verb+cd /usr/share/texmf/tex/latex/+ \hfill or
+      \item \verb+cd /usr/local/share/texmf/tex/latex/+ \hfill
+      \item[]
+      \item \verb+mkdir beamertheme-juelich+
+    \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+        \frametitle{Linux: Install the {\tt .sty} Files}
+        \begin{block}{Create Directory + Copy files + Update \TeX}
+        \begin{itemize}
+                \item Unzip \verb+beamertheme-juelich.zip+ file
+                \item Copy all files from subdirectory \verb+beamertheme-juelich/+ into
+                the new subdirectory \verb+beamertheme-juelich+
+                \item[]
+                \item Try to compile the minimal examples in the \verb+tutorial/+ subdirectory
+                \item[] \verb+pdflatex minimal.tex+
+                \item[] \verb+pdflatex minimal_handout.tex+
+                \item Afterwards try to compile this tutorial in the \verb+tutorial/+ subdirectory
+                \item[] \verb+pdflatex tutorial.tex+
+        \end{itemize}
+    \end{block}
+    \begin{alertblock}{Supported flavors of \LaTeX{}}
+    Pure \verb+latex+ is not supported, please use either \verb+pdflatex+, \verb+xelatex+ or \verb+lualatex+
+    \end{alertblock}
+\end{frame}
+
+\section{Test Installation I}
+\begin{frame}[fragile,label=examples]
+        \frametitle{Test your Installation}
+        \framesubtitle{Try to compile this minimal talk: {\tt tutorial/minimal.tex}}
+        \begin{columns}
+        \begin{column}[T]{0.4\textwidth}
+        \footnotesize
+        \verbatiminput{./minimal}
+        \end{column}\hfill
+        \begin{column}[T]{0.4\textwidth}
+        \setlength{\fboxsep}{0pt}%
+        \fbox{\includegraphics[width=\textwidth]{./minimal}}
+        \end{column}
+        \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+        \frametitle{Test your Installation II}
+        \framesubtitle{Try to compile this minimal talk with handouts: {\tt tutorial/minimal\_handout.tex}}
+        \begin{columns}
+        \begin{column}[T]{0.4\textwidth}
+        \scriptsize
+        \verbatiminput{./minimal_handout}
+        \end{column}
+        \begin{column}[T]{0.4\textwidth}
+        \includegraphics[height=0.7\textheight]{./minimal_handout}
+        \end{column}
+        \end{columns}
+\end{frame}
