@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.3.3)  13 MAR 2021 11:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.3.3)  15 MAR 2021 08:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1175,36 +1175,36 @@ onSlides/../HackathonSlides/Pictures/DSC_0762.JPG> </home/marcel/Projects/Helmh
 oltz-GPU-Hackathon-2021/Hackathon-Talks/HackathonSlides/../HackathonSlides/Pict
 ures/Gonzalo.jpg> </home/marcel/Projects/Helmholtz-GPU-Hackathon-2021/Hackathon
 -Talks/HackathonSlides/../HackathonSlides/Pictures/jayesh.jpg>]
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 201.
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 201.
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <5> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 201.
 File: fzj.pdf Graphic file (type pdf)
 <use fzj.pdf>
-Package pdftex.def Info: fzj.pdf  used on input line 201.
+Package pdftex.def Info: fzj.pdf  used on input line 200.
 (pdftex.def)             Requested size: 75.1318pt x 21.85222pt.
  [3
 
 ]
 File: fzj.pdf Graphic file (type pdf)
 <use fzj.pdf>
-Package pdftex.def Info: fzj.pdf  used on input line 201.
+Package pdftex.def Info: fzj.pdf  used on input line 200.
 (pdftex.def)             Requested size: 75.1318pt x 21.85222pt.
  [4
 
 ]
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 242.
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <7> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 242.
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <5> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 242.
 File: fzj.pdf Graphic file (type pdf)
 <use fzj.pdf>
-Package pdftex.def Info: fzj.pdf  used on input line 243.
+Package pdftex.def Info: fzj.pdf  used on input line 242.
 (pdftex.def)             Requested size: 75.1318pt x 21.85222pt.
  [5
 
 ]
 File: fzj.pdf Graphic file (type pdf)
 <use fzj.pdf>
-Package pdftex.def Info: fzj.pdf  used on input line 278.
+Package pdftex.def Info: fzj.pdf  used on input line 277.
 (pdftex.def)             Requested size: 75.1318pt x 21.85222pt.
  [6
 
@@ -1217,10 +1217,10 @@ Package rerunfilecheck Info: File `hackathon_talk.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24201 strings out of 479383
- 476722 string characters out of 5875831
- 906400 words of memory out of 5000000
- 40677 multiletter control sequences out of 15000+600000
+ 24190 strings out of 479383
+ 476454 string characters out of 5875831
+ 904091 words of memory out of 5000000
+ 40666 multiletter control sequences out of 15000+600000
  438539 words of font info for 110 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,17n,126p,1817b,1183s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1232,7 +1232,7 @@ share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/
 urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.
 pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on hackathon_talk.pdf (6 pages, 3569834 bytes).
+Output written on hackathon_talk.pdf (6 pages, 3569544 bytes).
 PDF statistics:
  100 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream
