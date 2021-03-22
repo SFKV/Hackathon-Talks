@@ -1,0 +1,62 @@
+% SPDX-License-Identifier: MIT
+% Copyright (c) 2017-2020 Forschungszentrum Juelich GmbH
+% This code is licensed under MIT license (see the LICENSE file for details)
+%
+\documentclass{beamer}
+\usetheme{Juelich}
+% enable the \fzjset line to allow compat colors globally
+% disabled by default since v18.10
+\fzjset{compat mode=enabled}
+\setlength{\abovecaptionskip}{0pt plus 0pt minus 0pt}
+
+\bibliography{references.bib}
+\usepackage{physics}
+\usepackage{booktabs}
+\usepackage{xcolor}
+
+\title{GPU-Isle}
+\author{Marcel, Stefan, Johann, Jan-Lukas}
+\institute{JSC, JSC, Uni Bonn, ESS}
+\date{\today}
+\titlegraphic{\includegraphics%
+    [width=\paperwidth]{placeholder}}
+\begin{document}
+%\maketitle
+
+\begin{frame}{What we did}
+	\begin{itemize}
+		\item Use \texttt{blaze} on CPU and \texttt{cuBLAS} on GPU
+		\item Implement wrapper for matrix multiplication using \texttt{cuBLAS}
+		\item Port some performance-critical functions to GPU
+		\item Implement custom matrix for \texttt{blaze}-independent data management
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Next steps}
+	\begin{itemize}
+		\item Implement custom vector for \texttt{blaze}-independent data management
+		\item Port matrix inversion to GPU
+		\item Reduce data transfer
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Problems and Solutions}
+	{\color{lightgray}
+	\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+		\hline
+		\texttt{blaze} does not compile with \texttt{nvcc} & Split code into chunks compiled with a combination of \texttt{g++} and \texttt{nvcc}\\\hline
+		\texttt{blaze} uses Vectorisation per default (error on GPU) & Add compile flags \texttt{-DBLAZE\_USE\_VECTORIZATION=0}\\\cline{1-1}
+		\multicolumn{2}{|p{0.9\textwidth}|}{\texttt{-DBLAZE\_DEFAULT\_PADDING\_FLAG=blaze::unpadded} \texttt{-DBLAZE\_DEFAULT\_ALIGNMENT\_FLAG=blaze::unaligned}}\\\hline
+		\texttt{std::complex} does not work & Use \texttt{cuda::std::complex} from \texttt{libcudacxx} \\\hline
+		\texttt{cuda::std::complex} does not work & Build own vector class \\\hline
+		Own vector class buggy & ... \\\hline
+	\end{tabular}
+	}
+	\begin{tabular}{|p{0.45\textwidth}|p{0.45\textwidth}|}
+		\hline
+		\texttt{std::complex} does not work & Use \texttt{cuDoubleComplex} from \texttt{cuBLAS} \\\hline
+		\texttt{cuDoubleComplex} has no overloaded functions & Implement multiplication and exp ourself \\\hline
+	\end{tabular}
+\end{frame}
+
+\end{document}
